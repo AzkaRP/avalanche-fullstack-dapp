@@ -15,6 +15,7 @@ export class BlockchainController {
   // Ubah dari @Post menjadi @Get
   @Get("events") 
   async getEvents() {
-    return this.blockchainService.getValueUpdatedEvents(50557000, 'latest' as any);
+    // Query last 2000 blocks (viem limit is 2048)
+    return this.blockchainService.getValueUpdatedEvents(0, 2000);
   }
 }
