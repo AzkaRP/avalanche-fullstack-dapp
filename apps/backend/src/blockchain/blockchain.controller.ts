@@ -15,6 +15,6 @@ export class BlockchainController {
   // Ubah dari @Post menjadi @Get
   @Get("events") 
   async getEvents() {
-    return this.blockchainService.getValueUpdatedEvents(0, 'latest' as any);
+    return this.blockchainService.getValueUpdatedEvents(50557000, 'latest' as any);
   }
 }
