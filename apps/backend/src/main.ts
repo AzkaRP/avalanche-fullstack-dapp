@@ -22,7 +22,7 @@ app.enableCors({
   SwaggerModule.setup('documentation', app, documentFactory);
 
   const port = process.env.PORT || 3000;
-app.listen(port);
+  await app.listen(port);
 }
 
 bootstrap().catch(error => {
