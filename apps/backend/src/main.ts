@@ -5,6 +5,12 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+app.enableCors({
+  origin: '*',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+});
+
   const config = new DocumentBuilder()
     .setTitle('Simple Storage dApp API')
     .setDescription('Azka Radhitya Pratama - 241011400210')
