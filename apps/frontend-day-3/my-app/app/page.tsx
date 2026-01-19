@@ -1,7 +1,4 @@
-import {
-  getBlockchainValue,
-  getBlockchainEvents,
-} from "@/services/blockchain.service";
+import { getBlockchainValue, getBlockchainEvents } from "../src/services/blockchain.service";
 
 export default async function HomePage() {
   const value = await getBlockchainValue();
