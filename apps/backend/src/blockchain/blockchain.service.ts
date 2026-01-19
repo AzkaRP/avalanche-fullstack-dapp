@@ -36,7 +36,7 @@ export class BlockchainService {
   }
 
   // 🔹 Read ValueUpdated events
-  async getValueUpdatedEvents(fromblock: number, toblock: number) {
+  async getValueUpdatedEvents(fromblock: number, toblock: number | string) {
     try {
       // sebelum eksekusi logic pastikan (toBlock - fromBlock) < 2048
       // jika lebih besar, kembalikkan error ke client
@@ -55,7 +55,7 @@ export class BlockchainService {
           ],
         },
         fromBlock: BigInt(fromblock), // speaker demo (jelaskan ini anti-pattern)
-        toBlock: BigInt(toblock),
+        toBlock: toblock === 'latest' ? 'latest' : BigInt(toblock as number),
       });
 
       return events.map((event) => ({
